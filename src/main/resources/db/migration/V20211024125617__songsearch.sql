@@ -1,8 +1,8 @@
 CREATE TABLE songlib.song (
 	"song_id" serial NOT NULL,
 	"title" VARCHAR(255) NOT NULL,
-	"artist" VARCHAR(128),
-	"genre" VARCHAR(128),
+	"artist_id" INTEGER,
+	"genre_id" INTEGER,
 	CONSTRAINT "pk_song" PRIMARY KEY (song_id)
 ) WITH (
   OIDS=FALSE
@@ -10,7 +10,7 @@ CREATE TABLE songlib.song (
 
 CREATE TABLE songlib.artist (
 	"artist_id" serial NOT NULL,
-	"artist_name" VARCHAR(128) NOT NULL UNIQUE,
+	"artist_name" VARCHAR(128) NOT NULL,
 	CONSTRAINT "pk_artist" PRIMARY KEY ("artist_id")
 ) WITH (
   OIDS=FALSE
@@ -25,6 +25,6 @@ CREATE TABLE songlib.genre (
 );
 
 
-ALTER TABLE songlib.song ADD CONSTRAINT "fk_artist" FOREIGN KEY (artist) REFERENCES songlib.artist(artist_name);
-ALTER TABLE songlib.song ADD CONSTRAINT "fk_genre" FOREIGN KEY (genre) REFERENCES songlib.genre(genre);
+ALTER TABLE songlib.song ADD CONSTRAINT "fk_artist" FOREIGN KEY (artist_id) REFERENCES songlib.artist(artist_id);
+ALTER TABLE songlib.song ADD CONSTRAINT "fk_genre" FOREIGN KEY (genre_id) REFERENCES songlib.genre(genre_id);
 
