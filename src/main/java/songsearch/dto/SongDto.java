@@ -1,22 +1,25 @@
 package songsearch.dto;
 
 import lombok.Getter;
-import lombok.Setter;
 
 @Getter
 public class SongDto {
 
-    private final Integer id;
+    private final Integer songId;
 
     private final String title;
 
-    private final String artist;
+    private final Integer artistId;
 
-    public SongDto(Integer id,
+    private final Integer genreId;
+
+    public SongDto(Integer songId,
                    String title,
-                   String artist) {
-        this.id = id;
+                   Integer artistId,
+                   Integer genreId) {
+        this.songId = songId;
         this.title = title;
-        this.artist = artist;
+        this.artistId = artistId;
+        this.genreId = genreId;
     }
 }
