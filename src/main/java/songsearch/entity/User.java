@@ -3,8 +3,10 @@ package songsearch.entity;
 
 import lombok.Getter;
 import lombok.Setter;
+import org.hibernate.annotations.CreationTimestamp;
 
 import javax.persistence.*;
+import java.time.Instant;
 
 @Entity
 @Getter
@@ -21,4 +23,14 @@ public class User {
     private String email;
 
     private String name;
+
+    @CreationTimestamp
+    private Instant createdAt;
+
+    public User() { }
+
+    public User(String email, String name) {
+        this.email = email;
+        this.name = name;
+    }
 }
