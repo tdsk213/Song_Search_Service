@@ -13,7 +13,7 @@ public class SongMapper {
 
     public SongDto mapSongToSongDto(Song model) {
         return new SongDto(
-                model.getSongId(),
+                model.getId(),
                 model.getTitle(),
                 model.getArtistId(),
                 model.getGenreId()

@@ -5,21 +5,21 @@ import lombok.Getter;
 @Getter
 public class SongDto {
 
-    private final Integer songId;
+    private final Integer id;
 
     private final String title;
 
-    private final Integer artistId;
+    private final Integer artist_id;
 
-    private final Integer genreId;
+    private final Integer genre_id;
 
-    public SongDto(Integer songId,
+    public SongDto(Integer id,
                    String title,
-                   Integer artistId,
-                   Integer genreId) {
-        this.songId = songId;
+                   Integer artist_id,
+                   Integer genre_id) {
+        this.id = id;
         this.title = title;
-        this.artistId = artistId;
-        this.genreId = genreId;
+        this.artist_id = artist_id;
+        this.genre_id = genre_id;
     }
 }

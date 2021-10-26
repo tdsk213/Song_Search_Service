@@ -6,9 +6,9 @@ import lombok.Getter;
 @Getter
 public class SongDeleteDto {
 
-    private final Integer songId;
+    private final Integer id;
 
-    public SongDeleteDto(@JsonProperty("song_id") Integer songId) {
-        this.songId = songId;
+    public SongDeleteDto(@JsonProperty("id") Integer id) {
+        this.id = id;
     }
 }

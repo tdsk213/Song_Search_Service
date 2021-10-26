@@ -10,14 +10,12 @@ import javax.persistence.*;
 @Setter
 public class Song {
 
-    //todo fix strange sequence name generated in Postgres
-    //todo fix camel notation in json files
     @Id
     @SequenceGenerator(name = "song_id_seq_generator",
-            sequenceName = "song_song_id_seq", allocationSize = 1)
+            sequenceName = "song_id_seq", allocationSize = 1)
     @GeneratedValue(strategy = GenerationType.SEQUENCE,
             generator = "song_id_seq_generator")
-    private Integer songId;
+    private Integer id;
 
     private String title;
 

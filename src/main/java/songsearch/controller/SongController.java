@@ -15,9 +15,6 @@ import java.util.Map;
 @RequestMapping("/songs")
 public class SongController {
 
-    Map<Integer, SongDto> songs = new HashMap<>();
-    private Integer id = 1;
-
     private final SongService songService;
 
     public SongController(SongService songService) {

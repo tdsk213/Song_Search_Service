@@ -7,12 +7,12 @@ import lombok.Getter;
 public class SongAddDto {
 
     private final String title;
-    private final Integer artistId;
-    private final Integer genreId;
+    private final Integer artist_id;
+    private final Integer genre_id;
 
-    public SongAddDto(@JsonProperty("title") String title, @JsonProperty("artist_id") Integer artistId, @JsonProperty("genre_id") Integer genreId) {
+    public SongAddDto(@JsonProperty("title") String title, @JsonProperty("artist_id") Integer artist_id, @JsonProperty("genre_id") Integer genre_id) {
         this.title = title;
-        this.artistId = artistId;
-        this.genreId = genreId;
+        this.artist_id = artist_id;
+        this.genre_id = genre_id;
     }
 }

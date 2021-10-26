@@ -34,11 +34,11 @@ public class JpaSongService implements SongService {
     }
 
     @Override
-    public SongDto addSong(SongAddDto songCreateDto) {
+    public SongDto addSong(SongAddDto songAddDto) {
         Song song = songFactory.build(
-                songCreateDto.getTitle(),
-                songCreateDto.getArtistId(),
-                songCreateDto.getGenreId()
+                songAddDto.getTitle(),
+                songAddDto.getArtist_id(),
+                songAddDto.getGenre_id()
                 // todo когда-нибудь нужно прописать реального инициатора создания заметки.
         );
 
@@ -48,8 +48,8 @@ public class JpaSongService implements SongService {
     }
 
     @Override
-    public SongDto editSong(Integer songId, SongEditDto songEditDto) {
-        Song song = songRepository.findById(songId).orElseThrow();
+    public SongDto editSong(Integer id, SongEditDto songEditDto) {
+        Song song = songRepository.findById(id).orElseThrow();
 
         song.setTitle(songEditDto.getTitle());
         //todo other setters
@@ -60,8 +60,8 @@ public class JpaSongService implements SongService {
     }
 
     @Override
-    public SongDto deleteSong(Integer songId) {
-        Song song = songRepository.findById(songId).orElseThrow();
+    public SongDto deleteSong(Integer id) {
+        Song song = songRepository.findById(id).orElseThrow();
         songRepository.delete(song);
         return songMapper.mapSongToSongDto(song);
     }
